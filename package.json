@@ -19,7 +19,9 @@
   "author": "Anamika Yadav",
   "type": "commonjs",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "devDependencies": {
     "parcel": "^2.16.4"
@@ -27,5 +29,8 @@
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
-  }
+  },
+  "browserslist": [
+    "last 2 chrome versions"
+  ]
 }
