@@ -1,0 +1,53 @@
+.headerlogo {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.navItems,
+.restaurantListItems {
+    display: flex;
+}
+
+.navItems>li {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+.cardComp {
+    border: 1px solid black;
+    width: 170px;
+    padding: 20px;
+    background-color: gray;
+    margin: 15px;
+}
+
+.card-logo {
+    width: 160px;
+    height: 100px;
+}
+
+.search {
+    padding: 10px;
+}
+
+.cardComp:hover {
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cuisineWords{
+    word-break: break-word;
+}
