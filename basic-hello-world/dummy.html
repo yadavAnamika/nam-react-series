@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" </head>
+
+<body>
+    <div id="root">
+        <h1>new content HELLO</h1>
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        const places = [
+            { district: "bengaluru", state: "karnataka", },
+            { district: "mysure", state: "karnataka" },
+            { district: "mysure", state: "Karnataka" },
+        ];
+
+        // distinct by district, using only plain loops (no Set/Map/filter/indexOf)
+        function getuniquesdictrict(places) {
+            let uniqueArr = [];
+
+            for (let i = 0; i < places.length; i++) {
+                let current = places[i];
+                let districtAlreadyAdded = false;
+
+                for (let j = 0; j < uniqueArr.length; j++) {
+                    if (uniqueArr[j].district === current.district) {
+                        districtAlreadyAdded = true;
+                        break;
+                    }
+                }
+
+                if (!districtAlreadyAdded) {
+                    uniqueArr.push(current);
+                }
+            }
+
+            return uniqueArr;
+        }
+
+        const distinctByDistrict = getuniquesdictrict(places);
+        console.log(distinctByDistrict);
+    </script>
+</body>
+
+
+</html>
+

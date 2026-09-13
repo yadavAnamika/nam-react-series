@@ -1,35 +1,3 @@
-import ReactDOM from "react-dom/client"
-
-const Header = () => {
-    return <div className="header">
-        <img className="headerlogo" src="https://www.pngall.com/wp-content/uploads/8/Restaurant-Logo-PNG-Free-Image.png" />
-        <ul className="navItems">
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Cart</li>
-        </ul>
-    </div>
-}
-
-const backgroudncolor = {
-    backgroundColor: "#f0f0f0"
-}
-const CardComponent = (props) => {
-    console.log(props);
-    //destructuring on the fly, where new variables should have same name as the key of the object, otherwise it will give undefined
-    const { cloudinaryImageId, name, cuisines, avgRatingString, sla } = props?.resData?.info;
-    return (
-        <div className="cardComp" style={backgroudncolor}>
-            <img className="card-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
-            <h3>{name}</h3>
-            <h4 className="cuisineWords">{cuisines.join(", ")}</h4>
-            <h4>{avgRatingString}</h4>
-            <h4>{sla.deliveryTime} minutes</h4>
-        </div>
-    )
-}
-
 let respObjList = [
     {
         "info": {
@@ -2042,28 +2010,4 @@ let respObjList = [
     }
 ];
 
-const BodyComponent = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-                {respObjList.map(res =>
-                    <CardComponent key={res.info.id} resData={res} />
-                )}
-            </div>
-        </div>
-    )
-}
-
-const AppComponent = () => {
-    return (
-        <div className="app-card">
-            <Header />
-            <BodyComponent />
-            <div className="footer"></div>
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppComponent />);
+export default respObjList;
